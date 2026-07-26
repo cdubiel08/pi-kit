@@ -1,0 +1,55 @@
+{
+  "name": "@cdubiel08/pi-kit",
+  "version": "0.1.0",
+  "description": "A focused UI and TUI kit for the Pi coding agent",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pi-coding-agent",
+    "tui",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdubiel08/pi-kit.git"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "files": [
+    "extensions/",
+    "themes/",
+    "scripts/validate-themes.mjs",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "tokyo-holo.config.example.json"
+  ],
+  "scripts": {
+    "test": "node --test extensions/tokyo-holo/test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "validate:themes": "node scripts/validate-themes.mjs",
+    "audit:runtime": "npm audit --omit=dev --audit-level=high",
+    "check": "npm run typecheck && npm test && npm run validate:themes && npm run audit:runtime"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/tokyo-holo/index.ts"
+    ],
+    "themes": [
+      "./themes/*.json"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.82.1",
+    "@earendil-works/pi-tui": "0.82.1",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

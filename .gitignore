@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+.claude/
+.pi/
+*.log
+*.tgz
+coverage/
+dist/
+.env
+.env.*
+!.env.example
+*.local.json

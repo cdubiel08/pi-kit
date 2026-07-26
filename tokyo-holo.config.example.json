@@ -1,0 +1,18 @@
+{
+  "glyphMode": "auto",
+  "compactTools": true,
+  "groupSequentialTools": true,
+  "maxToolCardWidth": 88,
+  "promptRail": true,
+  "hardwareBarCursor": false,
+  "shimmer": false,
+  "pulseOnSubmit": false,
+  "pulseOnToolReturn": false,
+  "hideDefaultFooter": true,
+  "hideDefaultWorkingIndicator": true,
+  "welcomeOverlay": "auto",
+  "welcomeDismissMs": 5000,
+  "editPreview": true,
+  "editPreviewLines": 12,
+  "editPreviewMaxWidth": 100
+}
