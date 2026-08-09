@@ -5,6 +5,7 @@ A deliberately small, public UI/TUI package for the [Pi coding agent](https://gi
 The initial release contains only visual runtime behavior:
 
 - `tokyo-night-clear` and `tokyo-holo` themes;
+- a shared Tokyo Night Clear palette with generated themes for Pi, Claude Code, Zed, Ghostty, and Windows Terminal;
 - a responsive gradient prompt rail and custom editor surface;
 - compact renderers for Pi's built-in tools;
 - grouped tool cards and edit-diff previews;
@@ -63,6 +64,27 @@ Important options:
 | `editPreview` | `true` | Show a compact post-edit diff card |
 
 Set `PI_TOKYO_HOLO_NERD_FONT=1` to use Nerd Font glyphs while `glyphMode` is `auto`. The optional hardware bar cursor uses standard DECSET/DECSCUSR terminal sequences and restores the terminal default when the extension shuts down.
+
+## Portable Tokyo Night Clear palette
+
+[`palettes/tokyo-night-clear.json`](./palettes/tokyo-night-clear.json) is the canonical color source. It generates application-specific mappings rather than forcing every application to use the same semantic token names:
+
+| Target | Generated output |
+|---|---|
+| Pi | `themes/tokyo-night-clear.json` |
+| Claude Code | `themes/claude-code/tokyo-night-clear-cc.json` |
+| Zed | `themes/zed/tokyo-night-clear-high-contrast.json` |
+| Ghostty | `themes/ghostty/Tokyo Night Clear` |
+| Windows Terminal | `themes/windows-terminal/tokyo-night-clear.json` |
+
+Regenerate and verify checked-in outputs with:
+
+```bash
+npm run generate:themes
+npm run check:generated
+```
+
+Install target files by copying them into each application's normal theme/config directory. The Windows Terminal file is a `schemes` settings fragment; merge its scheme into `settings.json` and select `Tokyo Night Clear` in the desired profile. Terminal-only preferences such as fonts, opacity, blur, padding, shell integration, and keybindings intentionally remain outside the shared palette.
 
 ## Scope and behavior
 

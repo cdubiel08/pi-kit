@@ -38,7 +38,6 @@
     "dim": "dim0",
     "text": "fg0",
     "thinkingText": "muted0",
-
     "selectedBg": "bg3",
     "userMessageBg": "userBg",
     "userMessageText": "fg0",
@@ -50,7 +49,6 @@
     "toolErrorBg": "errorBg",
     "toolTitle": "cyan",
     "toolOutput": "fg0",
-
     "mdHeading": "violet",
     "mdLink": "blue",
     "mdLinkUrl": "muted0",
@@ -61,11 +59,9 @@
     "mdQuoteBorder": "dim0",
     "mdHr": "dim0",
     "mdListBullet": "pink",
-
     "toolDiffAdded": "green",
     "toolDiffRemoved": "red",
     "toolDiffContext": "muted0",
-
     "syntaxComment": "dim0",
     "syntaxKeyword": "violet",
     "syntaxFunction": "blue",
@@ -75,7 +71,6 @@
     "syntaxType": "indigo",
     "syntaxOperator": "cyan",
     "syntaxPunctuation": "muted0",
-
     "thinkingOff": "dim0",
     "thinkingMinimal": "muted0",
     "thinkingLow": "blue",

@@ -1,0 +1,23 @@
+# Generated from palettes/tokyo-night-clear.json.
+background = #0b1020
+foreground = #e6edf7
+cursor-color = #00d5ff
+cursor-text = #0b1020
+selection-background = #24324a
+selection-foreground = #e6edf7
+palette = 0=#24324a
+palette = 1=#ff5c7a
+palette = 2=#42e66c
+palette = 3=#ffd166
+palette = 4=#4da3ff
+palette = 5=#b47cff
+palette = 6=#00d5ff
+palette = 7=#cbd7e6
+palette = 8=#5f738f
+palette = 9=#ff8fab
+palette = 10=#2ee6a6
+palette = 11=#ffd166
+palette = 12=#7c8cff
+palette = 13=#ff5ec4
+palette = 14=#00d5ff
+palette = 15=#e6edf7

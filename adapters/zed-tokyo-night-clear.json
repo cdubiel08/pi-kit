@@ -1,0 +1,548 @@
+{
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
+  "name": "Tokyo Night Clear High Contrast",
+  "author": "Adapted from pi tokyo-night-clear for local Zed config",
+  "themes": [
+    {
+      "name": "Tokyo Night Clear High Contrast",
+      "appearance": "dark",
+      "style": {
+        "accents": [
+          "$cyan",
+          "$blue",
+          "$green",
+          "$aqua",
+          "$amber",
+          "$orange",
+          "$red"
+        ],
+        "background.appearance": "opaque",
+        "background": "$bg0",
+        "surface.background": "$bg1",
+        "elevated_surface.background": "$bg2",
+        "panel.background": "$bg1",
+        "toolbar.background": "$bg1",
+        "title_bar.background": "$bg1",
+        "title_bar.inactive_background": "$bg0",
+        "status_bar.background": "$bg1",
+        "tab_bar.background": "$bg0",
+        "tab.active_background": "$bg2",
+        "tab.inactive_background": "$bg1",
+        "border": "$dim",
+        "border.variant": "$bg3",
+        "border.focused": "$cyan",
+        "border.selected": "$cyan",
+        "border.transparent": "#00000000",
+        "border.disabled": "$bg3",
+        "pane.focused_border": "$cyan",
+        "pane_group.border": "$bg3",
+        "panel.focused_border": "$cyan",
+        "panel.indent_guide": "$bg3",
+        "panel.indent_guide_active": "$dim",
+        "panel.indent_guide_hover": "$cyan",
+        "text": "$fg0",
+        "text.muted": "$muted",
+        "text.placeholder": "$muted",
+        "text.disabled": "$dim",
+        "text.accent": "$cyan",
+        "icon": "$fg1",
+        "icon.muted": "$muted",
+        "icon.disabled": "$dim",
+        "icon.placeholder": "$muted",
+        "icon.accent": "$cyan",
+        "element.background": "$bg2",
+        "element.hover": "$bg3",
+        "element.active": "$bg3",
+        "element.selected": "$bg3",
+        "element.disabled": "$bg2",
+        "ghost_element.background": "#00000000",
+        "ghost_element.hover": "$bg2",
+        "ghost_element.active": "$bg3",
+        "ghost_element.selected": "$bg3",
+        "ghost_element.disabled": "$bg2",
+        "drop_target.background": "$userBg",
+        "editor.background": "$bg0",
+        "editor.gutter.background": "$bg0",
+        "editor.subheader.background": "$bg1",
+        "editor.foreground": "$fg0",
+        "editor.active_line.background": "$bg2",
+        "editor.highlighted_line.background": "$bg2",
+        "editor.selection.background": "#1f6feb66",
+        "editor.line_number": "$dim",
+        "editor.active_line_number": "$fg0",
+        "editor.wrap_guide": "$bg3",
+        "editor.active_wrap_guide": "$dim",
+        "editor.indent_guide": "$bg3",
+        "editor.indent_guide_active": "$dim",
+        "editor.document_highlight.read_background": "$bg3",
+        "editor.document_highlight.write_background": "$bg3",
+        "editor.document_highlight.bracket_background": "$bg3",
+        "terminal.background": "$bg0",
+        "terminal.foreground": "$fg0",
+        "terminal.ansi.background": "$bg0",
+        "terminal.ansi.black": "$bg3",
+        "terminal.ansi.red": "$red",
+        "terminal.ansi.green": "$green",
+        "terminal.ansi.yellow": "$amber",
+        "terminal.ansi.blue": "$blue",
+        "terminal.ansi.magenta": "$violet",
+        "terminal.ansi.cyan": "$cyan",
+        "terminal.ansi.white": "$fg1",
+        "terminal.ansi.bright_black": "$dim",
+        "terminal.ansi.bright_red": "$rose",
+        "terminal.ansi.bright_green": "$aqua",
+        "terminal.ansi.bright_yellow": "$amber",
+        "terminal.ansi.bright_blue": "$indigo",
+        "terminal.ansi.bright_magenta": "$pink",
+        "terminal.ansi.bright_cyan": "$cyan",
+        "terminal.ansi.bright_white": "$fg0",
+        "scrollbar.thumb.background": "$dim@66",
+        "scrollbar.thumb.hover_background": "$dim",
+        "scrollbar.thumb.border": "$dim",
+        "scrollbar.track.background": "$bg0@80",
+        "scrollbar.track.border": "$bg3",
+        "link_text.hover": "$cyan",
+        "search.match_background": "$amber@55",
+        "search.active_match_background": "$orange@66",
+        "error": "$red",
+        "error.background": "$errorBg",
+        "error.border": "$red",
+        "warning": "$amber",
+        "warning.background": "$warningBg",
+        "warning.border": "$amber",
+        "info": "$cyan",
+        "info.background": "$infoBg",
+        "info.border": "$cyan",
+        "hint": "$blue",
+        "hint.background": "$userBg",
+        "hint.border": "$blue",
+        "success": "$green",
+        "success.background": "$successBg",
+        "success.border": "$green",
+        "created": "$green",
+        "created.background": "$successBg",
+        "created.border": "$green",
+        "modified": "$amber",
+        "modified.background": "$warningBg",
+        "modified.border": "$amber",
+        "deleted": "$red",
+        "deleted.background": "$errorBg",
+        "deleted.border": "$red",
+        "renamed": "$cyan",
+        "renamed.background": "$infoBg",
+        "renamed.border": "$cyan",
+        "conflict": "$violet",
+        "conflict.background": "$conflictBg",
+        "conflict.border": "$violet",
+        "ignored": "$muted",
+        "ignored.background": "$bg1",
+        "ignored.border": "$dim",
+        "version_control.added": "$green",
+        "version_control.added_background": "$successBg",
+        "version_control.deleted": "$red",
+        "version_control.deleted_background": "$errorBg",
+        "version_control.modified": "$amber",
+        "version_control.modified_background": "$warningBg",
+        "version_control.renamed": "$cyan",
+        "version_control.conflict": "$violet",
+        "version_control.conflict_background": "$conflictBg",
+        "version_control.ignored": "$muted",
+        "players": [
+          {
+            "cursor": "$cyan",
+            "selection": "#1f6feb66",
+            "background": "$cyan@22"
+          }
+        ],
+        "syntax": {
+          "attribute": {
+            "color": "$violet"
+          },
+          "boolean": {
+            "color": "$pink"
+          },
+          "class": {
+            "color": "$indigo"
+          },
+          "comment": {
+            "color": "$muted",
+            "font_style": "italic"
+          },
+          "comment.doc": {
+            "color": "$muted",
+            "font_style": "italic"
+          },
+          "constant": {
+            "color": "$pink"
+          },
+          "constant.builtin": {
+            "color": "$pink"
+          },
+          "constructor": {
+            "color": "$indigo"
+          },
+          "function": {
+            "color": "$blue"
+          },
+          "function.builtin": {
+            "color": "$cyan"
+          },
+          "function.call": {
+            "color": "$blue"
+          },
+          "keyword": {
+            "color": "$violet"
+          },
+          "keyword.function": {
+            "color": "$violet"
+          },
+          "keyword.import": {
+            "color": "$cyan"
+          },
+          "keyword.operator": {
+            "color": "$cyan"
+          },
+          "label": {
+            "color": "$orange"
+          },
+          "namespace": {
+            "color": "$indigo"
+          },
+          "number": {
+            "color": "$pink"
+          },
+          "operator": {
+            "color": "$cyan"
+          },
+          "property": {
+            "color": "$fg0"
+          },
+          "punctuation": {
+            "color": "$muted"
+          },
+          "punctuation.bracket": {
+            "color": "$muted"
+          },
+          "punctuation.delimiter": {
+            "color": "$muted"
+          },
+          "string": {
+            "color": "$green"
+          },
+          "string.documentation": {
+            "color": "$green"
+          },
+          "string.regex": {
+            "color": "$aqua"
+          },
+          "tag": {
+            "color": "$red"
+          },
+          "type": {
+            "color": "$indigo"
+          },
+          "type.builtin": {
+            "color": "$indigo"
+          },
+          "variable": {
+            "color": "$fg0"
+          },
+          "variable.builtin": {
+            "color": "$cyan"
+          },
+          "variable.parameter": {
+            "color": "$amber"
+          },
+          "markup.heading": {
+            "color": "$violet",
+            "font_weight": 700
+          },
+          "markup.link": {
+            "color": "$blue"
+          },
+          "markup.quote": {
+            "color": "$muted",
+            "font_style": "italic"
+          },
+          "markup.raw": {
+            "color": "$aqua"
+          },
+          "comment.documentation": {
+            "color": "$muted",
+            "font_style": "italic"
+          },
+          "comment.error": {
+            "color": "$red",
+            "font_style": "italic"
+          },
+          "comment.warning": {
+            "color": "$amber",
+            "font_style": "italic"
+          },
+          "comment.warn": {
+            "color": "$amber",
+            "font_style": "italic"
+          },
+          "comment.note": {
+            "color": "$blue",
+            "font_style": "italic"
+          },
+          "comment.info": {
+            "color": "$cyan",
+            "font_style": "italic"
+          },
+          "comment.hint": {
+            "color": "$blue",
+            "font_style": "italic"
+          },
+          "comment.todo": {
+            "color": "$amber",
+            "font_style": "italic"
+          },
+          "string.doc": {
+            "color": "$green"
+          },
+          "string.escape": {
+            "color": "$aqua"
+          },
+          "string.special": {
+            "color": "$aqua"
+          },
+          "string.special.path": {
+            "color": "$aqua"
+          },
+          "string.special.symbol": {
+            "color": "$aqua"
+          },
+          "string.special.url": {
+            "color": "$blue"
+          },
+          "string.regexp": {
+            "color": "$aqua"
+          },
+          "keyword.type": {
+            "color": "$violet"
+          },
+          "keyword.conditional": {
+            "color": "$violet"
+          },
+          "keyword.conditional.ternary": {
+            "color": "$cyan"
+          },
+          "keyword.coroutine": {
+            "color": "$violet"
+          },
+          "keyword.debug": {
+            "color": "$red"
+          },
+          "keyword.directive": {
+            "color": "$cyan"
+          },
+          "keyword.directive.define": {
+            "color": "$cyan"
+          },
+          "keyword.exception": {
+            "color": "$red"
+          },
+          "keyword.export": {
+            "color": "$cyan"
+          },
+          "keyword.modifier": {
+            "color": "$violet"
+          },
+          "keyword.repeat": {
+            "color": "$violet"
+          },
+          "keyword.return": {
+            "color": "$violet"
+          },
+          "function.decorator": {
+            "color": "$orange"
+          },
+          "function.macro": {
+            "color": "$cyan"
+          },
+          "function.method": {
+            "color": "$blue"
+          },
+          "function.method.call": {
+            "color": "$blue"
+          },
+          "type.class.definition": {
+            "color": "$indigo"
+          },
+          "type.definition": {
+            "color": "$indigo"
+          },
+          "type.interface": {
+            "color": "$indigo"
+          },
+          "type.super": {
+            "color": "$indigo"
+          },
+          "enum": {
+            "color": "$indigo"
+          },
+          "variant": {
+            "color": "$indigo"
+          },
+          "variable.member": {
+            "color": "$fg0"
+          },
+          "variable.special": {
+            "color": "$cyan"
+          },
+          "parameter": {
+            "color": "$amber"
+          },
+          "field": {
+            "color": "$fg0"
+          },
+          "constant.macro": {
+            "color": "$pink"
+          },
+          "number.float": {
+            "color": "$pink"
+          },
+          "float": {
+            "color": "$pink"
+          },
+          "character": {
+            "color": "$green"
+          },
+          "character.special": {
+            "color": "$aqua"
+          },
+          "charcter": {
+            "color": "$green"
+          },
+          "punctuation.list_marker": {
+            "color": "$pink"
+          },
+          "punctuation.special": {
+            "color": "$cyan"
+          },
+          "punctuation.special.symbol": {
+            "color": "$cyan"
+          },
+          "tag.attribute": {
+            "color": "$violet"
+          },
+          "tag.delimiter": {
+            "color": "$muted"
+          },
+          "tag.doctype": {
+            "color": "$muted"
+          },
+          "module": {
+            "color": "$indigo"
+          },
+          "symbol": {
+            "color": "$cyan"
+          },
+          "concept": {
+            "color": "$indigo"
+          },
+          "embedded": {
+            "color": "$fg0"
+          },
+          "parent": {
+            "color": "$fg0"
+          },
+          "primary": {
+            "color": "$fg0"
+          },
+          "preproc": {
+            "color": "$cyan"
+          },
+          "predoc": {
+            "color": "$muted"
+          },
+          "diff.plus": {
+            "color": "$green"
+          },
+          "diff.minus": {
+            "color": "$red"
+          },
+          "link_text": {
+            "color": "$blue"
+          },
+          "link_uri": {
+            "color": "$muted"
+          },
+          "title": {
+            "color": "$violet",
+            "font_weight": 700
+          },
+          "text": {
+            "color": "$fg0"
+          },
+          "text.literal": {
+            "color": "$aqua"
+          },
+          "hint": {
+            "color": "$blue"
+          },
+          "predictive": {
+            "color": "$muted"
+          },
+          "emphasis": {
+            "color": "$red",
+            "font_style": "italic"
+          },
+          "emphasis.strong": {
+            "color": "$red",
+            "font_weight": 700
+          }
+        },
+        "editor.invisible": "$dim@66",
+        "panel.overlay_background": "$bg2",
+        "hidden": "$muted",
+        "hidden.background": "$bg1",
+        "hidden.border": "$dim",
+        "predictive": "$muted",
+        "predictive.background": "$bg1",
+        "predictive.border": "$dim",
+        "unreachable": "$red",
+        "unreachable.background": "$errorBg",
+        "unreachable.border": "$red",
+        "terminal.bright_foreground": "$fg0",
+        "terminal.dim_foreground": "$muted",
+        "terminal.ansi.dim_black": "$bg3@99",
+        "terminal.ansi.dim_red": "$red@99",
+        "terminal.ansi.dim_green": "$green@99",
+        "terminal.ansi.dim_yellow": "$amber@99",
+        "terminal.ansi.dim_blue": "$blue@99",
+        "terminal.ansi.dim_magenta": "$violet@99",
+        "terminal.ansi.dim_cyan": "$cyan@99",
+        "terminal.ansi.dim_white": "$muted@99",
+        "debugger.accent": "$orange",
+        "editor.debugger_active_line.background": "$warningBg",
+        "minimap.thumb.background": "$dim@55",
+        "minimap.thumb.hover_background": "$dim@88",
+        "minimap.thumb.active_background": "$cyan@88",
+        "minimap.thumb.border": "$dim",
+        "scrollbar.thumb.active_background": "$cyan@88",
+        "version_control.conflict_marker.ours": "$green@33",
+        "version_control.conflict_marker.theirs": "$red@33",
+        "vim.mode.text": "$bg0",
+        "vim.normal.foreground": "$bg0",
+        "vim.normal.background": "$cyan",
+        "vim.helix_normal.foreground": "$bg0",
+        "vim.helix_normal.background": "$cyan",
+        "vim.insert.foreground": "$bg0",
+        "vim.insert.background": "$green",
+        "vim.visual.foreground": "$fg0",
+        "vim.visual.background": "$blue@66",
+        "vim.helix_select.foreground": "$fg0",
+        "vim.helix_select.background": "$blue@66",
+        "vim.visual_line.foreground": "$fg0",
+        "vim.visual_line.background": "$blue@66",
+        "vim.visual_block.foreground": "$fg0",
+        "vim.visual_block.background": "$violet@66",
+        "vim.replace.foreground": "$bg0",
+        "vim.replace.background": "$red"
+      }
+    }
+  ]
+}

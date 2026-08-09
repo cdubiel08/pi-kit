@@ -21,6 +21,9 @@
   "files": [
     "extensions/",
     "themes/",
+    "palettes/",
+    "adapters/",
+    "scripts/generate-themes.mjs",
     "scripts/validate-themes.mjs",
     "README.md",
     "SECURITY.md",
@@ -30,9 +33,11 @@
   "scripts": {
     "test": "node --test extensions/tokyo-holo/test/*.test.ts",
     "typecheck": "tsc --noEmit",
+    "generate:themes": "node scripts/generate-themes.mjs",
+    "check:generated": "node scripts/generate-themes.mjs --check",
     "validate:themes": "node scripts/validate-themes.mjs",
     "audit:runtime": "npm audit --omit=dev --audit-level=high",
-    "check": "npm run typecheck && npm test && npm run validate:themes && npm run audit:runtime"
+    "check": "npm run typecheck && npm test && npm run check:generated && npm run validate:themes && npm run audit:runtime"
   },
   "pi": {
     "extensions": [

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "schemes": [
+    {
+      "name": "Tokyo Night Clear",
+      "background": "#0b1020",
+      "foreground": "#e6edf7",
+      "cursorColor": "#00d5ff",
+      "selectionBackground": "#24324a",
+      "black": "#24324a",
+      "red": "#ff5c7a",
+      "green": "#42e66c",
+      "yellow": "#ffd166",
+      "blue": "#4da3ff",
+      "purple": "#b47cff",
+      "cyan": "#00d5ff",
+      "white": "#cbd7e6",
+      "brightBlack": "#5f738f",
+      "brightRed": "#ff8fab",
+      "brightGreen": "#2ee6a6",
+      "brightYellow": "#ffd166",
+      "brightBlue": "#7c8cff",
+      "brightPurple": "#ff5ec4",
+      "brightCyan": "#00d5ff",
+      "brightWhite": "#e6edf7"
+    }
+  ]
+}
