@@ -13,7 +13,7 @@ The initial release contains only visual runtime behavior:
 
 It does not include agents, skills, MCP integrations, provider configuration, credentials, or project-specific automation.
 
-Tested with Pi `0.82.1` and Node.js `22.19+`. A truecolor terminal is recommended; Unicode and ASCII glyph fallbacks are built in.
+Tested with Pi `0.84.1` and Node.js `22.19+`. A truecolor terminal is recommended; Unicode and ASCII glyph fallbacks are built in.
 
 ## Install
 
