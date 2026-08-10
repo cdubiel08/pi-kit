@@ -5,7 +5,7 @@ A deliberately small, public UI/TUI package for the [Pi coding agent](https://gi
 The initial release contains only visual runtime behavior:
 
 - `tokyo-night-clear` and `tokyo-holo` themes;
-- a shared Tokyo Night Clear palette with generated themes for Pi, Claude Code, Zed, Ghostty, and Windows Terminal;
+- a shared Tokyo Night Clear palette with generated themes for Pi, Claude Code, Zed, VS Code, Ghostty, and Windows Terminal;
 - a responsive gradient prompt rail and custom editor surface;
 - compact renderers for Pi's built-in tools;
 - grouped tool cards and edit-diff previews;
@@ -73,7 +73,8 @@ Set `PI_TOKYO_HOLO_NERD_FONT=1` to use Nerd Font glyphs while `glyphMode` is `au
 |---|---|
 | Pi | `themes/tokyo-night-clear.json` |
 | Claude Code | `themes/claude-code/tokyo-night-clear-cc.json` |
-| Zed | `themes/zed/tokyo-night-clear-high-contrast.json` |
+| Zed | `themes/zed/tokyo-night-clear-high-contrast.json` + `themes/zed/recommended-settings.json` |
+| VS Code | `themes/vscode/tokyo-night-clear-color-theme.json` + `themes/vscode/recommended-settings.json` |
 | Ghostty | `themes/ghostty/Tokyo Night Clear` |
 | Windows Terminal | `themes/windows-terminal/tokyo-night-clear.json` |
 
@@ -84,7 +85,9 @@ npm run generate:themes
 npm run check:generated
 ```
 
-Install target files by copying them into each application's normal theme/config directory. The Windows Terminal file is a `schemes` settings fragment; merge its scheme into `settings.json` and select `Tokyo Night Clear` in the desired profile. Terminal-only preferences such as fonts, opacity, blur, padding, shell integration, and keybindings intentionally remain outside the shared palette.
+Install target files by copying them into each application's normal theme/config directory. The generated Zed and VS Code `recommended-settings.json` files reproduce the preferred panel placement, JetBrains Mono Nerd Font code surface, and IBM Plex Sans Markdown layout; merge those keys into your existing user settings rather than replacing the file, especially if it contains agent or provider configuration.
+
+To test the VS Code theme directly from this checkout, run `code --extensionDevelopmentPath="$PWD"` and select **Tokyo Night Clear** with **Preferences: Color Theme** in the new Extension Development Host window. The Windows Terminal file is a `schemes` settings fragment; merge its scheme into `settings.json` and select `Tokyo Night Clear` in the desired profile. Terminal-only preferences such as opacity, blur, padding, shell integration, and keybindings intentionally remain outside the shared palette.
 
 ## Scope and behavior
 
