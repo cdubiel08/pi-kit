@@ -18,7 +18,13 @@
     "url": "https://github.com/cdubiel08/pi-kit.git"
   },
   "engines": {
-    "node": ">=22.19"
+    "node": ">=22.19",
+    "vscode": "^1.90.0"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
   },
   "files": [
     "extensions/",
@@ -48,6 +54,12 @@
         "uiTheme": "vs-dark",
         "path": "./themes/vscode/tokyo-night-clear-color-theme.json"
       }
+    ],
+    "markdown.previewStyles": [
+      "./themes/vscode/markdown-preview.css"
+    ],
+    "markdown.previewScripts": [
+      "./themes/vscode/markdown-preview.js"
     ]
   },
   "pi": {

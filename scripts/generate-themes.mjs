@@ -191,20 +191,98 @@ const vscodeSettings = {
   "editor.fontSize": 15,
   "editor.lineHeight": 26,
   "window.titleBarStyle": "custom",
-  "markdown.preview.fontFamily": "'IBM Plex Sans', sans-serif",
-  "markdown.preview.fontSize": 16,
-  "markdown.preview.lineHeight": 1.8,
   "[markdown]": {
-    "editor.fontFamily": "'IBM Plex Sans', sans-serif",
-    "editor.fontSize": 16,
-    "editor.lineHeight": 29,
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 26,
+    "editor.wordWrap": "on",
     "editor.rulers": [],
     "editor.tabSize": 2,
     "editor.formatOnSave": false,
   },
 };
+
+const vscodeMarkdownPreview = `/* Generated to mirror the Zed Markdown preview layout. */
+body {
+  box-sizing: border-box;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 24px 0 64px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: ${c.fg1};
+}
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 23px; }
+h1, h2 { border-bottom-color: ${c.bg3}; }
+a { color: ${c.cyan}; }
+code { color: ${c.fg0}; background: ${c.bg2}; }
+pre { border: 1px solid ${c.bg3}; border-radius: 10px; background: ${c.bg0}; }
+pre code { background: transparent; }
+blockquote { border-left-color: ${c.dim}; color: ${c.muted}; }
+.hljs-keyword, .hljs-literal, .hljs-symbol, .hljs-name { color: ${c.violet}; }
+.hljs-built_in, .hljs-type, .hljs-title, .hljs-function { color: ${c.blue}; }
+.hljs-number, .hljs-class, .hljs-variable, .hljs-template-variable { color: ${c.pink}; }
+.hljs-string, .hljs-meta-string { color: ${c.green}; }
+.hljs-regexp, .hljs-template-tag { color: ${c.aqua}; }
+.hljs-comment, .hljs-quote { color: ${c.muted}; font-style: italic; }
+.hljs-meta, .hljs-meta-keyword, .hljs-tag { color: ${c.cyan}; }
+.hljs-attr, .hljs-attribute, .hljs-builtin-name { color: ${c.amber}; }
+.hljs-bullet, .hljs-selector-tag, .hljs-selector-id, .hljs-selector-class,
+.hljs-selector-attr, .hljs-selector-pseudo { color: ${c.orange}; }
+.pi-kit-shell-command { color: ${c.blue}; }
+.pi-kit-shell-argument { color: ${c.green}; }
+.pi-kit-shell-option { color: ${c.pink}; }
+.pi-kit-shell-operator, .pi-kit-shell-variable { color: ${c.cyan}; }
+.pi-kit-shell-comment { color: ${c.muted}; font-style: italic; }
+`;
+
+const vscodeMarkdownPreviewScript = `(() => {
+  const shellClasses = ["language-bash", "language-shell", "language-sh", "language-zsh"];
+  const tokenPattern = /(\\s+|#[^\\n]*|"(?:\\\\.|[^"\\\\])*"|'[^']*'|&&|\\|\\||[|;]|\\$\\{?[-A-Za-z_][A-Za-z0-9_]*\\}?|--?[A-Za-z0-9][A-Za-z0-9_-]*|[^\\s|;]+)/g;
+
+  function highlightShell(code) {
+    if (code.dataset.piKitHighlighted === "true") return;
+    const source = code.textContent ?? "";
+    code.replaceChildren();
+    let expectCommand = true;
+    for (const token of source.match(tokenPattern) ?? []) {
+      const span = document.createElement("span");
+      span.textContent = token;
+      if (/^\\s+$/.test(token)) {
+        if (token.includes("\\n")) expectCommand = true;
+      } else if (token.startsWith("#")) {
+        span.className = "pi-kit-shell-comment";
+      } else if (/^(?:&&|\\|\\||[|;])$/.test(token)) {
+        span.className = "pi-kit-shell-operator";
+        expectCommand = true;
+      } else if (expectCommand) {
+        span.className = "pi-kit-shell-command";
+        expectCommand = false;
+      } else if (token.startsWith("-")) {
+        span.className = "pi-kit-shell-option";
+      } else if (token.startsWith("$")) {
+        span.className = "pi-kit-shell-variable";
+      } else {
+        span.className = "pi-kit-shell-argument";
+      }
+      code.append(span);
+    }
+    code.dataset.piKitHighlighted = "true";
+  }
+
+  function highlight() {
+    for (const code of document.querySelectorAll("pre > code")) {
+      if (shellClasses.some((name) => code.classList.contains(name))) highlightShell(code);
+    }
+  }
+
+  highlight();
+  new MutationObserver(highlight).observe(document.documentElement, { childList: true, subtree: true });
+})();
+`;
 
 const ansi = Object.fromEntries(Object.entries(palette.ansi).map(([slot, name]) => [slot, c[name]]));
 const windows = {
@@ -239,6 +317,8 @@ const outputs = new Map([
   ["themes/zed/recommended-settings.json", json(zedSettings)],
   ["themes/vscode/tokyo-night-clear-color-theme.json", json(vscode)],
   ["themes/vscode/recommended-settings.json", json(vscodeSettings)],
+  ["themes/vscode/markdown-preview.css", vscodeMarkdownPreview],
+  ["themes/vscode/markdown-preview.js", vscodeMarkdownPreviewScript],
   ["themes/ghostty/Tokyo Night Clear", ghostty],
   ["themes/windows-terminal/tokyo-night-clear.json", json(windows)],
 ]);

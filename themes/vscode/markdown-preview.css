@@ -1,0 +1,35 @@
+/* Generated to mirror the Zed Markdown preview layout. */
+body {
+  box-sizing: border-box;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 24px 0 64px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cbd7e6;
+}
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 23px; }
+h1, h2 { border-bottom-color: #24324a; }
+a { color: #00d5ff; }
+code { color: #e6edf7; background: #172033; }
+pre { border: 1px solid #24324a; border-radius: 10px; background: #0b1020; }
+pre code { background: transparent; }
+blockquote { border-left-color: #5f738f; color: #8da2bf; }
+.hljs-keyword, .hljs-literal, .hljs-symbol, .hljs-name { color: #b47cff; }
+.hljs-built_in, .hljs-type, .hljs-title, .hljs-function { color: #4da3ff; }
+.hljs-number, .hljs-class, .hljs-variable, .hljs-template-variable { color: #ff5ec4; }
+.hljs-string, .hljs-meta-string { color: #42e66c; }
+.hljs-regexp, .hljs-template-tag { color: #2ee6a6; }
+.hljs-comment, .hljs-quote { color: #8da2bf; font-style: italic; }
+.hljs-meta, .hljs-meta-keyword, .hljs-tag { color: #00d5ff; }
+.hljs-attr, .hljs-attribute, .hljs-builtin-name { color: #ffd166; }
+.hljs-bullet, .hljs-selector-tag, .hljs-selector-id, .hljs-selector-class,
+.hljs-selector-attr, .hljs-selector-pseudo { color: #ff9f43; }
+.pi-kit-shell-command { color: #4da3ff; }
+.pi-kit-shell-argument { color: #42e66c; }
+.pi-kit-shell-option { color: #ff5ec4; }
+.pi-kit-shell-operator, .pi-kit-shell-variable { color: #00d5ff; }
+.pi-kit-shell-comment { color: #8da2bf; font-style: italic; }
