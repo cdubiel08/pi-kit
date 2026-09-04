@@ -31,21 +31,28 @@
     "themes/",
     "palettes/",
     "adapters/",
-    "scripts/generate-themes.mjs",
-    "scripts/validate-themes.mjs",
+    "terminal/",
     "README.md",
     "SECURITY.md",
     "LICENSE",
-    "tokyo-holo.config.example.json"
+    "tokyo-holo.config.example.json",
+    "scripts/generate-themes.mjs",
+    "scripts/validate-themes.mjs",
+    "scripts/generate-terminal.mjs",
+    "scripts/validate-terminal.mjs",
+    "scripts/install-fonts.sh"
   ],
   "scripts": {
     "test": "node --test extensions/tokyo-holo/test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "generate:themes": "node scripts/generate-themes.mjs",
-    "check:generated": "node scripts/generate-themes.mjs --check",
+    "generate:terminal": "node scripts/generate-terminal.mjs",
+    "generate": "npm run generate:themes && npm run generate:terminal",
+    "check:generated": "node scripts/generate-themes.mjs --check && node scripts/generate-terminal.mjs --check",
     "validate:themes": "node scripts/validate-themes.mjs",
+    "validate:terminal": "node scripts/validate-terminal.mjs",
     "audit:runtime": "npm audit --omit=dev --audit-level=high",
-    "check": "npm run typecheck && npm test && npm run check:generated && npm run validate:themes && npm run audit:runtime"
+    "check": "npm run typecheck && npm test && npm run check:generated && npm run validate:themes && npm run validate:terminal && npm run audit:runtime"
   },
   "contributes": {
     "themes": [

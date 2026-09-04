@@ -1,0 +1,85 @@
+{
+  "id": "tokyo-night-clear",
+  "name": "Tokyo Night Clear",
+  "description": "Portable terminal typography and behavior profile shared by Ghostty, Windows Terminal, and herdr.",
+  "font": {
+    "primary": "CommitMono",
+    "nerdFallback": "JetBrainsMono Nerd Font Mono",
+    "patchedAlternative": "CommitMono Nerd Font Mono",
+    "size": 14,
+    "features": {
+      "calt": 0
+    },
+    "cellHeightPercent": 20,
+    "cursorThickness": 1
+  },
+  "glyphs": {
+    "env": {
+      "PI_TOKYO_HOLO_NERD_FONT": "1"
+    },
+    "privateUseRanges": [
+      "U+E000-U+F8FF",
+      "U+F0000-U+FFFFD"
+    ]
+  },
+  "window": {
+    "paddingX": 12,
+    "paddingY": 12,
+    "opacity": 0.96,
+    "blur": true,
+    "colorspace": "display-p3"
+  },
+  "cursor": {
+    "style": "bar"
+  },
+  "behavior": {
+    "copyOnSelect": true,
+    "mouseHideWhileTyping": true,
+    "confirmClose": false,
+    "shellIntegration": "zsh"
+  },
+  "macos": {
+    "titlebarStyle": "tabs",
+    "optionAsAlt": true,
+    "nonNativeFullscreen": true
+  },
+  "keybinds": [
+    {
+      "key": "super+alt+m",
+      "action": "toggle_mouse_reporting",
+      "comment": "Toggle TUI mouse capture so Cmd+click on file paths reaches Ghostty's link handler."
+    }
+  ],
+  "herdr": {
+    "base": "tokyo-night",
+    "onboarding": false,
+    "ui": {
+      "agent_panel_sort": "priority",
+      "show_agent_labels_on_pane_borders": true
+    },
+    "keys": {
+      "last_pane": "prefix+left"
+    },
+    "colors": {
+      "accent": "cyan",
+      "panel_bg": "bg0",
+      "sidebar_bg": "bg1",
+      "active_row_bg": "bg2",
+      "selection_bg": "bg3",
+      "surface_dim": "bg1",
+      "surface0": "bg2",
+      "surface1": "bg3",
+      "overlay0": "dim",
+      "overlay1": "muted",
+      "text": "fg0",
+      "subtext0": "muted",
+      "mauve": "violet",
+      "green": "green",
+      "yellow": "amber",
+      "red": "red",
+      "blue": "blue",
+      "teal": "aqua",
+      "peach": "orange"
+    }
+  }
+}

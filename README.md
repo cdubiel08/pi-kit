@@ -6,6 +6,7 @@ The initial release contains only visual runtime behavior:
 
 - `tokyo-night-clear` and `tokyo-holo` themes;
 - a shared Tokyo Night Clear palette with generated themes for Pi, Claude Code, Zed, VS Code, Ghostty, and Windows Terminal;
+- a portable terminal profile with matching font, Nerd glyph, and window settings for Ghostty, Windows Terminal, and herdr;
 - a responsive gradient prompt rail and custom editor surface;
 - compact renderers for Pi's built-in tools;
 - grouped tool cards and edit-diff previews;
@@ -81,13 +82,29 @@ Set `PI_TOKYO_HOLO_NERD_FONT=1` to use Nerd Font glyphs while `glyphMode` is `au
 Regenerate and verify checked-in outputs with:
 
 ```bash
-npm run generate:themes
+npm run generate
 npm run check:generated
 ```
 
 Install target files by copying them into each application's normal theme/config directory. The generated Zed and VS Code `recommended-settings.json` files reproduce the preferred panel placement, JetBrains Mono Nerd Font code surface, and IBM Plex Sans Markdown layout; merge those keys into your existing user settings rather than replacing the file, especially if it contains agent or provider configuration.
 
-To test the VS Code theme directly from this checkout, run `code --extensionDevelopmentPath="$PWD"` and select **Tokyo Night Clear** with **Preferences: Color Theme** in the new Extension Development Host window. The Windows Terminal file is a `schemes` settings fragment; merge its scheme into `settings.json` and select `Tokyo Night Clear` in the desired profile. Terminal-only preferences such as opacity, blur, padding, shell integration, and keybindings intentionally remain outside the shared palette.
+To test the VS Code theme directly from this checkout, run `code --extensionDevelopmentPath="$PWD"` and select **Tokyo Night Clear** with **Preferences: Color Theme** in the new Extension Development Host window. The Windows Terminal file is a `schemes` settings fragment; merge its scheme into `settings.json` and select `Tokyo Night Clear` in the desired profile. Terminal preferences such as font, opacity, blur, padding, shell integration, and keybindings stay out of the palette and live in the terminal profile below.
+
+## Terminal profile
+
+[`terminal/profile.json`](./terminal/profile.json) is the canonical source for everything the palette deliberately leaves out: the font stack, Nerd glyph wiring, window padding and opacity, cursor shape, and keybindings. It generates one config per terminal:
+
+| Target | Generated output |
+|---|---|
+| Ghostty | `terminal/ghostty/config` |
+| Windows Terminal | `terminal/windows-terminal/settings-fragment.json` |
+| herdr | `terminal/herdr/config.toml` |
+
+The font stack is CommitMono with JetBrainsMono Nerd Font Mono behind it, so text metrics come from CommitMono while private-use glyphs still resolve. Install both faces with `scripts/install-fonts.sh` on macOS or Linux, or with the `nerd-fonts` scoop bucket on Windows.
+
+The Ghostty and Windows Terminal configs both export `PI_TOKYO_HOLO_NERD_FONT=1`, which is the only signal `glyphMode: auto` trusts to turn on Nerd Font glyphs. Each config carries color by reference rather than by copy, so the palette stays the single color source.
+
+Setup steps for all three targets, including the Windows Terminal version requirement for font fallback, are in [`terminal/README.md`](./terminal/README.md).
 
 ## Scope and behavior
 

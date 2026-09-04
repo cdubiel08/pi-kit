@@ -1,0 +1,38 @@
+# Tokyo Night Clear herdr profile.
+# Generated from terminal/profile.json and palettes/tokyo-night-clear.json. Do not edit by hand.
+#
+# Install: merge into ~/.config/herdr/config.toml, then run
+# `herdr config check` and `herdr server reload-config`.
+
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+
+[theme.custom]
+accent = "#00d5ff"
+panel_bg = "#0b1020"
+sidebar_bg = "#111827"
+active_row_bg = "#172033"
+selection_bg = "#24324a"
+surface_dim = "#111827"
+surface0 = "#172033"
+surface1 = "#24324a"
+overlay0 = "#5f738f"
+overlay1 = "#8da2bf"
+text = "#e6edf7"
+subtext0 = "#8da2bf"
+mauve = "#b47cff"
+green = "#42e66c"
+yellow = "#ffd166"
+red = "#ff5c7a"
+blue = "#4da3ff"
+teal = "#2ee6a6"
+peach = "#ff9f43"
+
+[ui]
+agent_panel_sort = "priority"
+show_agent_labels_on_pane_borders = true
+
+[keys]
+last_pane = "prefix+left"

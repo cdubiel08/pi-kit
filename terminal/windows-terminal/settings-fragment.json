@@ -1,0 +1,25 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "copyOnSelect": true,
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Tokyo Night Clear",
+      "font": {
+        "face": "CommitMono, JetBrainsMono Nerd Font Mono",
+        "size": 14,
+        "features": {
+          "calt": 0
+        },
+        "cellHeight": "120%"
+      },
+      "cursorShape": "bar",
+      "padding": "12, 12, 12, 12",
+      "opacity": 96,
+      "useAcrylic": true,
+      "adjustIndistinguishableColors": "never",
+      "environment": {
+        "PI_TOKYO_HOLO_NERD_FONT": "1"
+      }
+    }
+  }
+}

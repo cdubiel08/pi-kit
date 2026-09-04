@@ -1,0 +1,38 @@
+# Tokyo Night Clear terminal profile.
+# Generated from terminal/profile.json and palettes/tokyo-night-clear.json. Do not edit by hand.
+#
+# Install: copy this file to ~/.config/ghostty/config and copy
+# "themes/ghostty/Tokyo Night Clear" into ~/.config/ghostty/themes/.
+
+font-family = CommitMono
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 14
+font-feature = -calt
+font-codepoint-map = U+E000-U+F8FF=JetBrainsMono Nerd Font Mono
+font-codepoint-map = U+F0000-U+FFFFD=JetBrainsMono Nerd Font Mono
+adjust-cell-height = 20%
+adjust-cursor-thickness = 1
+
+theme = Tokyo Night Clear
+window-colorspace = display-p3
+background-opacity = 0.96
+background-blur = true
+background-opacity-cells = false
+
+cursor-style = bar
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+confirm-close-surface = false
+shell-integration = zsh
+
+window-padding-x = 12
+window-padding-y = 12
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+macos-non-native-fullscreen = true
+
+# Opt the tokyo-holo Pi extension into Nerd Font glyphs while glyphMode is auto.
+env = PI_TOKYO_HOLO_NERD_FONT=1
+
+# Toggle TUI mouse capture so Cmd+click on file paths reaches Ghostty's link handler.
+keybind = super+alt+m=toggle_mouse_reporting
